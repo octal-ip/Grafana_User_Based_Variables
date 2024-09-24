@@ -1,5 +1,5 @@
 # Grafana: User Based Variables
-Sometimes there's a need to produce a variable in Grafana that's possible values are specific to the user who's logged in. This may be for convenience (so a user doesn't see what's not relevent to them on shared dashboards) or to prevent a user from seeing data that they shouldn't be able to access (e.g. so different customers can share a single dashboard or query without encountering each others data).
+Sometimes there's a need to produce a variable in Grafana that's possible values are specific to the user who's logged in. This may be for convenience (so a user doesn't see what's not relevant to them on shared dashboards) or to prevent a user from seeing data that they shouldn't be able to access (e.g. so different customers can share a single dashboard or query without encountering each others data).
 As there doesn't seem to be a way to assign variable values on a per-user basis natively in Grafana, this page details how to use a simple SQLite database to provide customised variable values for each user.
 
 In the below example, usernames (as used in Grafana) are populated into the *permissions* table, referencing the site ID they should be able to access in the *site_id* column, one per row. Substitute the sites nomenclature and the "mac_address" column name with whatever best suits your purpose.
